@@ -100,7 +100,7 @@ echo "<script>alert('This email or Contact Number already associated with anothe
               i{
                 color:lightgray;
                 position: relative;
-                bottom: 40px;
+                bottom: 30px;
                 cursor:pointer;
                 left: 600px;;
 
@@ -205,7 +205,7 @@ while ($row=mysqli_fetch_array($ret)) {
                     </div>
                     <div class="cont-top margin-up">
                         <div class="cont-left text-center">
-                            <span class="fa fa-map-marker text-primary"></span>
+                            <span class="fa fa-clock-o text-primary"></span>
                         </div>
                         <div class="cont-right">
                             <h6>Time</h6>
@@ -238,20 +238,20 @@ while ($row=mysqli_fetch_array($ret)) {
                           <input type="password" class="form-control" name="password" placeholder="Password" id="password"required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
                            <i id="visibilityBtn"><span id="icon" class="material-symbols-outlined">visibility_off</i>
                         </div>
-
-                        <div style="padding-top: 30px">
+                        <div>
                              <label>Repeat Password</label>
                           <input type="password" class="form-control" name="password2" placeholder="Password" id="password2"required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
                            <i id="visibilityBtn2"><span id="icon2" class="material-symbols-outlined">visibility_off</span></i>
                         </div>
 
-                           
-                          <!--   <div class="checkbox-container">
-                              <input type="checkbox" id="checkbox1" required>
+                            <!-- //eto na yung sa checkbox -->
+                            <div class="checkbox-container"> 
+                            
+                              <input  type="checkbox" id="checkbox1" title="You must agree to Terms and Condition" required> 
+                              I agree to <a href="terms-and-condition.php"> Terms and Conditions</a>
                               <label for="checkbox1"></label>
                           </div>
-                          <label> I agree <br><a href="terms-and-condition.php">Terms and Conditions</a></label> -->
-                            
+   
                       <!--   <div class="checkbox-container">
                             <input type="checkbox" name="agreement" class="form-check-output" required>
                             <label for="agreement" class="form-check-label font-ubuntu text-black-50">I agree<a href="terms-and-condition.php">Terms and Conditions</a></label>
@@ -340,3 +340,4 @@ const visibilityBtn= document.getElementById("visibilityBtn")
 </body>
 
 </html>
+smtp.gmail.com

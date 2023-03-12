@@ -29,7 +29,7 @@ $msg="Your current password is wrong";
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Change Password</title>
+<title>Ace Pawtrol | Change Password</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -48,6 +48,7 @@ $msg="Your current password is wrong";
 <!--//webfonts--> 
 <!--animate-->
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 <script src="js/wow.min.js"></script>
 	<script>
 		 new WOW().init();
@@ -71,6 +72,7 @@ return true;
 } 
 
 </script>
+
 </head> 
 <body class="cbp-spmenu-push">
 	<div class="main-content">
@@ -94,7 +96,7 @@ return true;
 								<p style="font-size:16px; color:red" align="center"> <?php if($msg){
     echo $msg;
   }  ?> </p>
-
+	
   <?php
 $adminid=$_SESSION['bpmsaid'];
 $ret=mysqli_query($con,"select * from tbladmin where ID='$adminid'");
@@ -102,11 +104,27 @@ $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
-							 <div class="form-group"> <label for="exampleInputEmail1">Current Password</label> <input type="password" name="currentpassword" class="form-control" required= "true" value=""> </div> <div class="form-group"> <label for="exampleInputPassword1">New Password</label> <input type="password" name="newpassword" class="form-control" value="" required="true" ern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" > </div>
-							 <div class="form-group"> <label for="exampleInputPassword1">Confirm Password</label> <input type="password" name="confirmpassword" class="form-control" value="" required="true" ern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" > </div>
-							  
+ 						
+							
+						
+
+
+				
+						<div class="form-group">
+					 <label for="password">Current Password</label> <input type="password" id="password" name="currentpassword" class="form-control" required= "true" value=""> </div> <div class="form-group"> 
+						
+					<label for="exampleInputPassword1">New Password</label> <input type="password" id="pasword" name="newpassword" class="form-control" value="" required="true" ern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" > </div>
+	
+						 
+							 
+	<div class="form-group"> <label for="password">Confirm Password</label> <input type="password" id="password" name="confirmpassword" class="form-control" value="" required="true" ern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" > </div>
+				
+
+
 							  <button type="submit" name="submit" class="btn btn-default">Change</button> </form> 
-						</div>
+
+						
+							</div>
 						<?php } ?>
 					</div>
 				
@@ -116,7 +134,7 @@ while ($row=mysqli_fetch_array($ret)) {
 		 <?php include_once('includes/footer.php');?>
 	</div>
 	<!-- Classie -->
-		<script src="js/classie.js"></script>
+		<script src="js/classie.js"></scrip>
 		<script>
 			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 				showLeftPush = document.getElementById( 'showLeftPush' ),

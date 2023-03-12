@@ -61,7 +61,21 @@ if(isset($_POST['login']))
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+
+
+<style>
+  i{
+    color:lightgray;
+                position: relative;
+                bottom: 30px;
+                cursor:pointer;
+                left: 600px;
+    }
+</style>
+
+</head>
   <body id="home">
 <?php include_once('includes/header.php');?>
 
@@ -145,7 +159,7 @@ while ($row=mysqli_fetch_array($ret)) {
                     </div>
                     <div class="cont-top margin-up">
                         <div class="cont-left text-center">
-                            <span class="fa fa-map-marker text-primary"></span>
+                            <span class="fa fa-clock-o text-primary"></span>
                         </div>
                         <div class="cont-right">
                             <h6>Time</h6>
@@ -156,19 +170,20 @@ while ($row=mysqli_fetch_array($ret)) {
                 <div class="map-content-9 mt-lg-0 mt-4">
                     <form method="post">
                         <div>
+                            <label>Email</label>
                             <input type="text" class="form-control" name="emailcont" required="true" placeholder="Registered Email" required="true">
-                           
                         </div>
-                        <div style="padding-top: 30px;">
-                          <input type="password" class="form-control" name="password" placeholder="Password" value="" id="myInput" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" title="Must be at least 8 characters long, and contain at least one number, one uppercase and one lowercase letter."  >
-                   
+
+                        <div style="padding-top: 30px">
+                             <label>Password</label>
+                          <input type="password" class="form-control" name="password" placeholder="Password" id="password"required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
+                           <i id="visibilityBtn"><span id="icon" class="material-symbols-outlined">visibility_off</i>
                         </div>
-                        
-                        <div class="twice-two" style="padding-top: 30px;">
+                        <div class="twice-two">
                           <a class="link--gray" style="color: blue;" href="recover-password.php">Forgot Password?</a>
-                             <button type="submit" class="btn btn-contact" name="login">Login</button>
+                        
+                        <button type="submit" class="btn btn-contact" name="login">Login</button>
                         </div>
-                       
                     </form>
                 </div>
     </div>
@@ -181,6 +196,25 @@ while ($row=mysqli_fetch_array($ret)) {
 	<span class="fa fa-long-arrow-up"></span>
 </button>
 <script>
+        const visibilityBtn= document.getElementById("visibilityBtn")
+                    visibilityBtn.addEventListener("click",toggleVisibility)
+
+                   function toggleVisibility(){
+                    const passwordInput= document.getElementById("password")
+                    const icon = document.getElementById("icon")
+                        if (passwordInput.type === "password"){
+                            passwordInput.type = "text"
+                            icon.innerText = "visibility"
+                        
+                        } else{
+                            passwordInput.type = "password"
+                            icon.innerText = "visibility_off"
+                        }
+
+
+                   } 
+
+
 	// When the user scrolls down 20px from the top of the document, show the button
 	window.onscroll = function () {
 		scrollFunction()

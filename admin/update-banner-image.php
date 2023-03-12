@@ -45,7 +45,7 @@ move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$newimage);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Update Services</title>
+<title>Ace Pawtrol | Update Services</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->

@@ -22,7 +22,23 @@ session_destroy();
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Reset Page </title>
+<title>Ace Pawtrol | Reset Page </title>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+
+
+<style>
+  i{
+    color:lightgray;
+                position: relative;
+                bottom: 55px;
+                cursor:pointer;
+                left: 520px;
+    }
+</style>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -74,25 +90,89 @@ return true;
 				<h3 class="title1">Reset Page</h3>
 				<div class="widget-shadow">
 					<div class="login-top">
-						<h4>Welcome back to AcePatrol AdminPanel ! </h4>
+						<h4>Welcome back to Ace Pawtrol AdminPanel ! </h4>
 					</div>
 					<div class="login-body">
 						<form role="form" method="post" action="" name="changepassword" onsubmit="return checkpass();">
 							<p style="font-size:16px; color:red" align="center"> <?php if($msg){
     echo $msg;
   }  ?> </p>
+
+  							
+  							<div>
+  							<label>New Password</label>
 							<input type="password" name="newpassword" class="lock" placeholder="New Password" required="true">
+							<i id="visibilityBtn2"><span id="icon2" class="material-symbols-outlined">visibility_off</i>
+							</div>
 							
+							<div>	
+							<label>Repeat Password</label>
 							<input type="password" name="confirmpassword" class="lock" placeholder="Confirm Password" required="true">
-							
+							<i id="visibilityBtn3"><span id="icon2" class="material-symbols-outlined">visibility_off</i>
+							</div>
+
 							<input type="submit" name="submit" value="Reset">
 							<div class="forgot-grid">
 								
 								<div class="forgot">
 									<a href="index.php">Already have an account</a>
+									<br>
+									<a href="index.php">Back to Admin</a>
+
 								</div>
 								<div class="clearfix"> </div>
 							</div>
+
+
+
+							<script>
+                             const visibilityBtn2= document.getElementById("visibilityBtn2")
+                    visibilityBtn2.addEventListener("click",toggleVisibility2)
+
+                   function toggleVisibility2(){
+                    const passwordInput= document.getElementById("newpassword")
+                    const icon = document.getElementById("icon2")
+                        if (passwordInput.type === "password"){
+                            passwordInput.type = "text"
+                            icon.innerText = "visibility"
+                        
+                        } else{
+                            passwordInput.type = "password"
+                            icon.innerText = "visibility_off"
+                        }
+
+
+                   } 
+
+                   const visibilityBtn3= document.getElementById("visibilityBtn3")
+                    visibilityBtn3.addEventListener("click",toggleVisibility3)
+
+                   function toggleVisibility3(){
+                    const passwordInput= document.getElementById("confirmpassword")
+                    const icon = document.getElementById("icon3")
+                        if (passwordInput.type === "password"){
+                            passwordInput.type = "text"
+                            icon.innerText = "visibility"
+                        
+                        } else{
+                            passwordInput.type = "password"
+                            icon.innerText = "visibility_off"
+                        }
+
+
+                   } 
+                        </script>
+
+
+
+
+
+
+
+
+
+
+
 						</form>
 					</div>
 				</div>

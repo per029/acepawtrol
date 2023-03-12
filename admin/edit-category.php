@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Update Category</title>
+<title>Ace Pawtrol | Update Category</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -94,7 +94,7 @@ while ($row=mysqli_fetch_array($ret)) {
 
 
 
-								<div class="form-group"> 
+							<div class="form-group"> 
 								<label for="exampleInputEmail1">Category Status</label>
 															 	
 								<select class="form-control" id="catstat" name="catstat" value="" required="true">

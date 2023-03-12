@@ -7,7 +7,7 @@ include('includes/dbconnection.php');
 <html lang="en">
   <head>
     
-    <title>Ace Petshop | About us Pages</title>
+    <title>Ace Petshop | About us Page</title>
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
@@ -141,7 +141,9 @@ while ($row=mysqli_fetch_array($ret)) {
                 
                     <div class="hair-two-colums">
                         <div class="hair-left">
-                           <h2> <a href="https://www.google.com/maps/place/Ace+Petshop/@14.7599391,120.9615404,3a,90y,304.57h,91.21t/data=!3m6!1e1!3m4!1sD4uQiGjoXY8gO6PaaF3UGg!2e0!7i16384!8i8192!4m5!3m4!1s0x3397b26a5e7a8a55:0xfbb5af365c5c2e61!8m2!3d14.7600086!4d120.961484">@Ace Pet Shop</a>
+                           <h2> <a href="https://www.google.com/maps/place/Ace+Petshop/@14.7599391,120.9615404,3a,90y,304.57h,91.21t/data=!3m6!1e1!3m4!1sD4uQiGjoXY8gO6PaaF3UGg!2e0!7i16384!8i8192!4m5!3m4!1s0x3397b26a5e7a8a55:0xfbb5af365c5c2e61!8m2!3d14.7600086!4d120.961484">@AcePetshop Location</a>
+                           <p> Your Pet's Second Home <br> Ace Petshop is always serves the best for your fur babies
+                           </p>
                             </div></h2>
 
                         </div>

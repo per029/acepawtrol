@@ -17,7 +17,7 @@ echo "<script>window.location.href='new-appointment.php'</script>";
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol || New Appointment</title>
+<title>Ace Pawtrol || New Appointment</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->

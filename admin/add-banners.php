@@ -103,9 +103,6 @@ move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$newimage);
     
               <div class="form-group"> <label for="exampleInputEmail1">Images</label> <input type="file" class="form-control" id="image" name="image" value="" required="true"> </div>
                 <button type="submit" name="submit" class="btn btn-default">Add</button> </form> 
-                <br>
-                  <div class="form-group"> <label for="exampleInputEmail1"><a href="manage-banners.php">Manage Banners</a></label></div>
-              </div>
             </div>
             
           </div>

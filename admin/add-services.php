@@ -47,7 +47,7 @@ move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$newimage);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol| Add Services</title>
+<title>Ace Pawtrol| Add Services</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -102,7 +102,7 @@ move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$newimage);
 
   
 							 <div class="form-group"> <label for="exampleInputEmail1">Service Name</label> <input type="text" class="form-control" id="sername" name="sername" placeholder="Service Name" value="" required="true"> </div>
-							 <div class="form-group"> <label for="exampleInputEmail1">Service Description</label> <textarea type="text" class="form-control" id="sername" name="serdesc" placeholder="Service Name" value="" required="true"></textarea> </div>
+							 <div class="form-group"> <label for="exampleInputEmail1">Service Description</label> <textarea type="text" class="form-control" id="sername" name="serdesc" placeholder="Service Name" value=""></textarea> </div>
 							  <div class="form-group"> <label for="exampleInputPassword1">Cost</label> <input type="text" id="cost" name="cost" class="form-control" placeholder="Cost" value="" required="true"> </div>
 							<div class="form-group"> <label for="exampleInputEmail1">Images</label> <input type="file" class="form-control" id="image" name="image" value="" required="true"> </div>
 							  <button type="submit" name="submit" class="btn btn-default">Add</button> </form> 

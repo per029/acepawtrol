@@ -12,7 +12,7 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol || View Invoice</title>
+<title>Ace Pawtrol || View Invoice</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -124,16 +124,14 @@ $gtotal+=$subtotal;
 
 </tr>
 </table>
-
   <p style="margin-top:1%"  align="center">
   <i class="fa fa-print fa-2x" style="cursor: pointer;"  OnClick="CallPrint(this.value)" ></i>
-	</p>
+</p>
 
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<!--footer-->
 		 <?php include_once('includes/footer.php');?>
         <!--//footer-->

@@ -144,7 +144,7 @@ while ($row=mysqli_fetch_array($ret)) {
         
                         
                         <div class="twice-two" style="padding-top: 30px;">
-                          <a class="link--gray" style="color: blue;" href="sampleotp.php">Resend Code</a>
+                          <a class="link--gray" style="color: blue;" href="resend-otp.php">Resend Code</a>
                         
                         </div>
                         <br>
@@ -153,9 +153,8 @@ while ($row=mysqli_fetch_array($ret)) {
 
 
 // Set the expiry time for the OTP to 5 minutes from now
+$expiry_time = time() + 300;
 
-$expiry_time = time() + 60;
-$otp_expired = false;
 
 echo "This OTP will expire in: <span id='countdown'></span> ";
 
@@ -181,15 +180,12 @@ var x = setInterval(function() {
   // Display the remaining time
   document.getElementById("countdown").innerHTML = minutes + "m " + seconds + "s ";
 
-  // If the countdown is finished, display "Expired" and set otp_expired flag to true
+  // If the countdown is finished, display "Expired" and clear the interval
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "Expired";
-    <?php $otp_expired = true; ?>
   }
 }, 1000);
-
-
 </script>
 
                         </div>

@@ -8,10 +8,9 @@ if(isset($_POST['submit']))
     $contactno=$_POST['contactno'];
     $email=$_POST['email'];
 
-        $query=mysqli_query($con,"select ID from tbladmin where  Email='$email' and MobileNumber='$contactno' ");
+        $query=mysqli_query($con,"select ID from tbladmin where  Email='$email' ");
     $ret=mysqli_fetch_array($query);
     if($ret>0){
-      $_SESSION['contactno']=$contactno;
       $_SESSION['email']=$email;
      header('location:reset-password.php');
     }
@@ -23,7 +22,7 @@ if(isset($_POST['submit']))
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Forgot Page </title>
+<title>Ace Pawtrol | Forgot Page </title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -61,17 +60,16 @@ if(isset($_POST['submit']))
 				<h3 class="title1">Forgot Page</h3>
 				<div class="widget-shadow">
 					<div class="login-top">
-						<h4>Welcome back to AcePatrol AdminPanel ! </h4>
+						<h4>Welcome back to Ace Pawtrol AdminPanel ! </h4>
 					</div>
 					<div class="login-body">
 						<form role="form" method="post" action="">
 							<p style="font-size:16px; color:red" align="center"> <?php if($msg){
     echo $msg;
   }  ?> </p>
+						<label> &nbsp  &nbsp Please input your Email Address</label>
 							<input type="text" name="email" class="lock" placeholder="Email" required="true">
-							
-							<input type="text" name="contactno" class="lock" placeholder="Mobile Number" required="true" maxlength="10" pattern="[0-9]+">
-							
+									
 							<input type="submit" name="submit" value="Reset">
 							<div class="forgot-grid">
 								

@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 error_reporting(0);
@@ -135,8 +136,7 @@ include('includes/dtables.php');
 									    <th>Quantity</th> 
 									     <th>Price</th> 								       
 									 <th>Status</th>
-									 <th>Date and Time Added</th>
-									  <th>Expiration Date</th>
+									  <th>Expiry Date</th>
 									 <th>Action</th> </tr> 
 									</thead>
 
@@ -152,15 +152,22 @@ include('includes/dtables.php');
  
       <div class="modal-body" style="max-height: 500px;overflow: auto;">
 
-      
 
 			  
-			  <div class="form-group"> <label for="exampleInputEmail1">Product Name</label> <input type="text" class="form-control" id="proname" name="proname" placeholder="Product Name" value="" required="true"> </div>
+			  <div class="form-group">
+				 <label for="exampleInputEmail1">Product Name</label>
+				  <input type="text" class="form-control" id="proname" name="proname" placeholder="Product Name" value="" required="true"> 
+				</div>
 
-				<div class="form-group"> <label for="exampleInputEmail1">Images</label> <input type="file" class="form-control" id="image" name="image" value="" required="true"> </div>
+				<div class="form-group"> 
+					<label for="exampleInputEmail1">Images</label> 
+					<!-- <input type="file" class="img-thumbnail" id="image" name="image" value="" required="true">  -->
+<!-- 
+					<img src="" alt="" class="img-thumbnail" id="image" name="image" value=""  width="500" height="600"> -->
+				</div>
 
 
-			  				 <div class="form-group">
+			  <div class="form-group">
                  <label>Brands</label>
                  <select class="form-control" id="brandActive" name="brandActive" value="" required="true">
                  <option value="">~~SELECT</option>
@@ -174,7 +181,7 @@ include('includes/dtables.php');
 							      </select>
 							    </div>
 
-			  				<div class="form-group">
+			  <div class="form-group">
                  <label>Category</label>
                  <select class="form-control" id="categoryActive" name="categoryActive" value="" required="true">
                  <option value="">~~SELECT</option>
@@ -234,7 +241,7 @@ while ($row=mysqli_fetch_array($ret)) {
 
 						 <tr> <th scope="row"><?php echo $cnt;?></th> 
 						 	<td><?php  echo $row['product_name'];?></td> 
-						  <td><img src="images/<?php echo $row['product_image']?>" width="200"></td>
+						  <td><img src="images/<?php echo $row['product_image']?>" width="100" class="img-fluid" ></td>
                              
 						 	<td><?php  echo $row['brand_name'];?></td>
 						 	<td><?php  echo $row['category_name'];?></td>
@@ -252,11 +259,10 @@ while ($row=mysqli_fetch_array($ret)) {
 						 		?>
 
 						 	</td> 
-						 	<td><?php  echo $row['product_datetime_added'];?></td> 
 						 	<td><?php  echo $row['expiry_date'];?></td> 
 
 						 	<td>
-						 		<a href="edit-product.php?editid=<?php echo $row['product_id'];?>" class="btn btn-primary">Edit</a>
+						 	<a href="edit-product.php?editid=<?php echo $row['product_id'];?>" class="btn btn-primary">Edit</a>
 						 	<a href="manage-product.php?delstat=<?php echo $row['product_id'];?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
 
 						 	</td> </tr>   <?php 

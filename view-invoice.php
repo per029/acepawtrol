@@ -49,7 +49,7 @@ $(function () {
                 
  Invoice History
             </h3>
-            <p class="tiltle-para ">Ace petshop is always serves the best for your fur babies.</p>
+            <p class="tiltle-para ">Ace Petshop is always serves the best for your fur babies.</p>
         </div>
 </div>
 </div>

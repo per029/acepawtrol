@@ -70,7 +70,20 @@ if($Email){
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+
+
+<style>
+  i{
+    color:lightgray;
+                position: relative;
+                bottom: 30px;
+                cursor:pointer;
+                left: 600px;
+    }
+</style>
+</head>
   <body id="home">
 <?php include_once('includes/header.php');?>
 
@@ -186,13 +199,59 @@ while ($row=mysqli_fetch_array($ret)) {
                           <input type="text" class="form-control" name="contactno" placeholder="Contact Number" required="true" pattern="[0-9]+">
                         
                         </div> -->
-                        <div style="padding-top: 30px;">
+                        <div>
                           <input type="password" class="form-control" id="newpassword" name="newpassword" placeholder="New Password">
-                        
+                          <i id="visibilityBtn2"><span id="icon2" class="material-symbols-outlined">visibility_off</i>
                         </div>
-                        <div style="padding-top: 30px;">
+                        <div>
                            <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+                           <i id="visibilityBtn3"><span id="icon3" class="material-symbols-outlined">visibility_off</i>
+
+                        <script>
+                             const visibilityBtn2= document.getElementById("visibilityBtn2")
+                    visibilityBtn2.addEventListener("click",toggleVisibility2)
+
+                   function toggleVisibility2(){
+                    const passwordInput= document.getElementById("newpassword")
+                    const icon = document.getElementById("icon2")
+                        if (passwordInput.type === "password"){
+                            passwordInput.type = "text"
+                            icon.innerText = "visibility"
                         
+                        } else{
+                            passwordInput.type = "password"
+                            icon.innerText = "visibility_off"
+                        }
+
+
+                   } 
+
+                   const visibilityBtn3= document.getElementById("visibilityBtn3")
+                    visibilityBtn3.addEventListener("click",toggleVisibility3)
+
+                   function toggleVisibility3(){
+                    const passwordInput= document.getElementById("confirmpassword")
+                    const icon = document.getElementById("icon3")
+                        if (passwordInput.type === "password"){
+                            passwordInput.type = "text"
+                            icon.innerText = "visibility"
+                        
+                        } else{
+                            passwordInput.type = "password"
+                            icon.innerText = "visibility_off"
+                        }
+
+
+                   } 
+                        </script>
+
+
+
+
+
+
+
+
                         </div>
                         <div class="twice-two" style="padding-top: 30px;">
                           <a class="link--gray" style="color: blue;" href="login.php">signin</a>

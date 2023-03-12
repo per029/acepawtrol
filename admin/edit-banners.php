@@ -88,10 +88,7 @@ while ($row=mysqli_fetch_array($ret)) {
 ?> 
 
   
-							 <div class="form-group">
-							  <label for="exampleInputEmail1">Banner Name</label>
-							   <input type="text" class="form-control" id="bname" name="bname" placeholder="Banner Name" value="<?php  echo $row['banner_name'];?>" required="true">
-							    </div>
+							 <div class="form-group"> <label for="exampleInputEmail1">Banner Name</label> <input type="text" class="form-control" id="bname" name="bname" placeholder="Banner Name" value="<?php  echo $row['banner_name'];?>" required="true"> </div>
 
 							 <div class="form-group text-center"> <label for="exampleInputPassword1">Banner Image</label> 
                              <div class="container">

@@ -17,7 +17,7 @@ echo "<script>window.location.href='all-appointment.php'</script>";
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol || All Appointment</title>
+<title>Ace Pawtrol || All Appointment</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -95,7 +95,6 @@ while ($row=mysqli_fetch_array($ret)) {
                      <?php } else { ?>
                       <td><?php  echo $row['Status'];?></td><?php } ?> 
                                        <td><a href="view-appointment.php?viewid=<?php echo $row['bid'];?>" class="btn btn-primary">View</a>
-                                       	<a href="edit-appointment.php?editid=<?php echo $row['bid'];?>" class="btn btn-success">Edit</a>
 <a href="all-appointment.php?delid=<?php echo $row['bid'];?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
                                        	</td> </tr>   <?php 
 $cnt=$cnt+1;

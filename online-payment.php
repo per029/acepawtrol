@@ -1,20 +1,13 @@
-<?php 
+<?php
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if (strlen($_SESSION['bpmsuid']==0)) {
-  header('location:logout.php');
-  } else{
-
-
-
-  ?>
+?>
 <!doctype html>
 <html lang="en">
   <head>
- 
-
-    <title>Ace Petshop | Invoice/payment</title>
+    
+    <title>Ace Petshop | About us Page</title>
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
@@ -37,77 +30,74 @@ $(function () {
   })
 });
 </script>
-
 <!-- disable body scroll which navbar is in active -->
 
 <!-- breadcrumbs -->
-<section class="w3l-inner-banner-main">
-    <div class="about-inner contact ">
-        <div class="container">   
-            <div class="main-titles-head text-center">
-            <h3 class="header-name ">
-                Invoice/Payment
-            </h3>
+    <section class="w3l-inner-banner-main">
+        <div class="about-inner about ">
+            <div class="container">   
+                <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+                    Online Payment
+                </h3>
+            </div>
+</div>
+   </div>
+   <div class="breadcrumbs-sub">
+   <div class="container">   
+    <ul class="breadcrumbs-custom-path">
+        <li class="right-side propClone"><a href="index.php" class="">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a> <p></li>
+        <li class="active ">Online Payment</li>
+    </ul>
+</div>
+</div>
         </div>
-</div>
-</div>
-<div class="breadcrumbs-sub">
-<div class="container">   
-<ul class="breadcrumbs-custom-path">
-    <li class="right-side propClone"><a href="index.php" class="">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a> <p></li>
-    <li class="active ">
-        Invoice/Payment</li>
-</ul>
-</div>
-</div>
-    </div>
-</section>
+    </section>
+  
+         
 <!-- breadcrumbs //-->
-<section class="w3l-contact-info-main" id="contact">
-    <div class="contact-sec ">
+<section class="w3l-content-with-photo-4"  id="about">
+    <div class="content-with-photo4-block ">
         <div class="container">
+            <div class="cwp4-two row">
+            <div class="cwp4-image col-xl-6">
+                <img src="assets/images/gcash.jpg" class="img-responsive about-me" width="500px">
+            </div>
 
-            <div>
-                <div class="cont-details">
-                   <div class="table-content table-responsive cart-table-content">
-                    <h4 style="padding-bottom: 20px;text-align: center;color: blue;">Invoice</h4>
-                        <table class="table" border="1">
-                            <thead >
-                                <tr> 
-                                <th>#</th> 
-                                <th>Invoice Id</th> 
-                                <th>Customer Name</th>
-                                <th>Status</th>
-                                <th>Payment</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                               
-                                <tr>
-                                    <?php
-                                   $userid= $_SESSION['bpmsuid'];
- $query=mysqli_query($con,"select distinct tbluser.ID as uid, tbluser.FirstName,tbluser.LastName,tblinvoice.BillingId,Status,date(tblinvoice.PostingDate) as PostingDate  from  tbluser   
-    join tblinvoice on tbluser.ID=tblinvoice.Userid where tbluser.ID='$userid'order by tblinvoice.ID desc");
-$cnt=1;
-              while($row=mysqli_fetch_array($query))
-              { ?>
-               <tr> 
-                            <th scope="row"><?php echo $cnt;?></th> 
-                            <td><?php  echo $row['BillingId'];?></td>
-                            <td><?php  echo $row['FirstName'];?> <?php  echo $row['LastName'];?></td>
-                            <td><?php  echo $row['Status'];?></td>
-                                <td><a href="payment.php?invoiceid=<?php  echo $row['BillingId'];?>" class="btn btn-info">Payment</a></td> 
 
-                          </tr><?php $cnt=$cnt+1; } ?>
-                             
-                            </tbody>
-                        </table>
-                    </div> </div>
-                
-    </div>
-   
-    </div></div>
+                <div class="cwp4-text col-xl-6 ">
+                    <div class="widget-shadow">
+                        <h2>Online Payment</h2>
+                  
+                        <div style="padding-top: 30px;">
+                            <h4>Invoice Id</h4>
+
+
+                            
+                            <input class="form-control" placeholder="Invoice Id" type="" name="atime" id='atime' required="true"></div>
+
+                        <div style="padding-top: 30px;">
+                            <h4>Total </h4>
+
+
+                            
+                            <input class="form-control " placeholder="Total" type="" name="atime" id='atime' required="true"></div>
+
+                        <div style="padding-top: 30px;">
+                        <h4>Reciept</h4>
+                        <input type="file" class="form-control" id="image" name="image" value="" required="true"> </div>
+
+
+
+                        <form>
+                           <div class="pull-right" style="padding-top: 30px;">
+                    <button type="submit" name="submit" class="btn btn-primary">Submit</button> </form>
+                  </div>                
+                            
+                       
 </section>
+    
+
 <?php include_once('includes/footer.php');?>
 <!-- move top -->
 <button onclick="topFunction()" id="movetop" title="Go to top">
@@ -136,4 +126,4 @@ $cnt=1;
 <!-- /move top -->
 </body>
 
-</html><?php } ?>
+</html>

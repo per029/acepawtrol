@@ -3,37 +3,25 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 
-isset($_POST['login']);
-
-
-if(empty($_POST['username']) && empty($_POST['password']))
-{
-
-
-}else{
+if(isset($_POST['login']))
+  {
     $adminuser=$_POST['username'];
-    $password=$_POST['password'];
-    $query=mysqli_query($con,"select ID , UserType from tbladmin where UserName='$adminuser' && Password='$password'");
+    $password=md5($_POST['password']);
+    $query=mysqli_query($con,"select ID from tbladmin where  UserName='$adminuser' && Password='$password' ");
     $ret=mysqli_fetch_array($query);
-    $_SESSION['user_type'] = $ret['UserType'];
-
-    if($_SESSION['user_type'] == "Admin"){
-    		$_SESSION['bpmsaid']=$ret['ID'];
-    	 header('location:dashboard.php');
+    if($ret>0){
+      $_SESSION['bpmsaid']=$ret['ID'];
+     header('location:dashboard.php');
     }
-    if($_SESSION['user_type'] == "Cashier"){
-    		$_SESSION['bpmsaid']=$ret['ID'];
-    	 header('location:cashier.php');
+    else{
+    $msg="Invalid Details.";
     }
-    
-
-}
-  
+  }
   ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Login Page </title>
+<title>Ace Pawtrol | Login Page </title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -49,10 +37,10 @@ if(empty($_POST['username']) && empty($_POST['password']))
 <style>
   i{
 	color:lightgray;
-	position: relative	;
+	position: relative;
 	bottom: 55px;
 	cursor:pointer;
-	left: 670px;;
+	left: 520px;;
 
 	}
 </style>
@@ -89,7 +77,7 @@ if(empty($_POST['username']) && empty($_POST['password']))
 				<h3 class="title1">SignIn Page</h3>
 				<div class="widget-shadow">
 					<div class="login-top">
-						<h4>Welcome back to AcePatrol AdminPanel ! </h4>
+						<h4>Welcome back to Ace Pawtrol AdminPanel ! </h4>
 					</div>
 					<div class="login-body">
 						<form role="form" method="post" action="">
@@ -115,7 +103,7 @@ if(empty($_POST['username']) && empty($_POST['password']))
 							<div class="forgot-grid">
 								
 								<div class="forgot">
-									<a href="Register.php">Register</a>
+									<a href="forgot-password.php">forgot password?</a>
 								</div>
 								<div class="clearfix"> </div>
 							</div>

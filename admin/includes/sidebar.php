@@ -1,4 +1,4 @@
-  <div class=" sidebar" role="navigation">
+ <div class=" sidebar" role="navigation">
             <div class="navbar-collapse">
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
           <ul class="nav" id="side-menu">
@@ -59,6 +59,10 @@
                 <li>
                   <a href="rejected-appointment.php">Rejected Appointment</a>
                 </li>
+                <li>
+                  <a href="walk-in-appointment-time.php">Walk-in Appointment</a>
+                </li>
+
               </ul>
               <!-- //nav-second-level -->
             </li>
@@ -86,106 +90,35 @@
               <!-- //nav-second-level -->
             </li>
 
-            <li>
+    <li>
               <a href="invoices.php" class="chart-nav"><i class="fa fa-file-text-o nav_icon"></i>Invoices</a>
-            </li>
-            <!--  <li>
-              <a href="add-category.php" class="chart-nav"><i class="fa fa-archive nav_icon"></i>Stock<span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level collapse">
-                <li>
-                  <a href="add-stock.php">Add Stock</a>
-                </li>
-                <li>
-                  <a href="manage-stock.php">Manage Stock</a>
-                </li>
-              </ul>
-            </li>  
-
-            <li>
-              <a href="add-category.php" class="chart-nav"><i class="fa fa-file-text-o nav_icon"></i>categories<span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level collapse">
-                <li>
-                  <a href="add-category.php">Add Category</a>
-                </li>
-                <li>
-                  <a href="manage-category.php">Manage Category</a>
-                </li>
-              </ul>
-            </li>  
-
-             <li>
-              <a href="add-brand.php"><i class="fa fa-bold nav_icon"></i>Brands<span class="fa arrow"></span> </a>
-              <ul class="nav nav-second-level collapse">
-                <li>
-                  <a href="add-brand.php">Add Services</a>
-                </li>
-                <li>
-                  <a href="manage-brand.php">Manage Brands</a>
-                </li>
-
-              </ul> 
-              <li> -->
-           <!--    <a href="add-product.php" class="chart-nav"><i class="fa fa-file-text-o nav_icon"></i>Products<span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level collapse">
-                <li>
-                  <a href="add-product.php">Add Product</a>
-                </li>
-                <li>
-                  <a href="manage-product.php">Manage Product</a>
-                </li>
-              </ul>
-            </li>  
-
-          
-            </li> -->
-         <li>
-              <a href="add-services.php"><i class="fa fa-cogs nav_icon"></i>Gcash Payment<span class="fa arrow"></span> </a>
-              <ul class="nav nav-second-level collapse">
-                <li>
-                  <a href="manage-gcash.php">Add QrCode</a>
-                </li>
-                
-              </ul>
-              <!-- /nav-second-level -->
-            </li>
+            </li>       
           <li>
-
               <a href="inventory.php"><i class="fa fa-file-text-o nav_icon"></i>Inventory<span class="fa arrow"></span></a>
               <ul class="nav nav-second-level collapse">
-                 <li>
-                  <a href="manage-stock.php">Manage Stock</a>
-                </li>
-                 <li>
-                  <a href="manage-category.php">Manage Category</a>
-                </li>
-                  <li>
-                  <a href="manage-brand.php">Manage Brands</a>
-                </li>
+                <li><a href="manage-brand.php">Brand</a></li>
+                <li><a href="manage-category.php">Category</a></li>
+                <li><a href="manage-product.php">Product</a> </li></ul>
+
+
                 <li>
-                  <a href="manage-product.php">Manage Product</a>
+                  <a href="expiration.php"><i class="fa fa-calendar nav_icon" ></i>expiration</a>
+                </li>
+                 <li>
+                  <a href="stock.php"><i class="fa fa-thumb-tack nav_icon"></i>out of stock</a>
                 </li>
 
-               </ul>
-               <li>
-                  <a href="sample1.php">sample</a>
-                </li>
-                <li>
-                  <a href="sample2.php"><i class="fa fa-solid fa-calendar nav_icon "></i>expiration</a>
-                </li>
-                 <li>
-<!--                   <a href="sample3.php">out of stock</a> -->
-                  <a href="sample3.php"><i class="fa fa-stack-overflow nav_icon"></i>out of stock</a>
-                </li>
-               
+
+
+                
           <div class="clearfix"> </div>
+
+          
           <!-- //sidebar-collapse -->
         </nav>
-
           </ul>
           </ul>
           <div class="clearfix"> </div>
-
-
           <!-- //sidebar-collapse -->
         </nav>
       </div>

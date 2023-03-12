@@ -123,7 +123,7 @@ while ($row=mysqli_fetch_array($ret)) {
                     </div>
                     <div class="cont-top margin-up">
                         <div class="cont-left text-center">
-                            <span class="fa fa-map-marker text-primary"></span>
+                            <span class="fa fa-clock-o text-primary"></span>
                         </div>
                         <div class="cont-right">
                             <h6>Time</h6>

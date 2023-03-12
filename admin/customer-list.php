@@ -17,7 +17,7 @@ echo "<script>window.location.href='customer-list.php'</script>";
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol || Customer List</title>
+<title>Ace Pawtrol || Customer List</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->

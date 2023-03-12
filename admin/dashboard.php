@@ -9,7 +9,7 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Admin Dashboard</title>
+<title>Ace Pawtrol | Admin Dashboard</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -187,24 +187,10 @@ $totalcat=mysqli_num_rows($query8);
 				
 
 				</div>
-<div class="col-md-4 widget states-last">
-						<?php $query9=mysqli_query($con,"Select * from tblproduct");
-$totalpro=mysqli_num_rows($query9);
-?>
-						<div class="stats-left">
-							<h5>Total</h5>
-							<h4>Stock</h4>
-						</div>
-						<div class="stats-right">
-							<label><?php echo $totalpro;?></label>
-						</div>
-						<div class="clearfix"> </div>	
-					</div>
-					<div class="clearfix"> </div>	
-				</div>
+
 						
 					</div>	
-				
+			</div>
 
 		</div>
 		</div>

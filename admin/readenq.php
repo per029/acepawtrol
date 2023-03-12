@@ -17,7 +17,7 @@ echo "<script>window.location.href='readenq.php'</script>";
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol || Manage Read Enquiry</title>
+<title>Ace Pawtrol || Manage Read Inquiry</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -66,18 +66,18 @@ include('includes/dtables.php');
 		<div id="page-wrapper">
 			<div class="main-page">
 				<div class="tables">
-					<h3 class="title1">Manage Read Enquiry</h3>
+					<h3 class="title1">Manage Read Inquiry</h3>
 					
 					
 				
 					<div class="table-responsive bs-example widget-shadow">
-						<h4>View Enquiry:</h4>
+						<h4>View Inquiry:</h4>
 						<table class="table table-bordered" id="dataTable"> <thead> <tr>
                    <th>S.No</th>
                    <th>Name</th>
                     <th>Email</th>
                 
-                    <th>Enquiry Date</th>
+                    <th>Inquiry Date</th>
                      <th>Action</th>
                   </tr> </thead> <tbody>
 <?php

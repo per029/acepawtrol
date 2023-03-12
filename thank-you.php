@@ -71,9 +71,9 @@ Appointment Confirmation
             <div>
                 
  
-                    <h4 class="w3ls_head">Thank you for applying. Your Appointment no is <?php echo $_SESSION['aptno'];?> Please go to advance payment for the confirmation of your appointment</h4>
+                    <h4 class="w3ls_head">Thank you for applying. Your Appointment no is <?php echo $_SESSION['aptno'];?> </h4>
                     
-                    <a href="online-payment.php"></a>
+       
     </div>
    
     </div></div>

@@ -24,7 +24,7 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol| Admin Profile</title>
+<title>Ace Pawtrol| Admin Profile</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -85,20 +85,20 @@ while ($row=mysqli_fetch_array($ret)) {
 
 ?>
 							 <div class="form-group">
-							 			<label for="exampleInputEmail1">Admin Name</label>
+							 			<label for="exampleInputEmail1">Admin Name:</label>
 							 				<input type="text" class="form-control" id="adminname" name="adminname" placeholder="Admin Name" value="<?php  echo $row['AdminName'];?>">
 							</div>
 							 <div class="form-group">
-							 			<label for="exampleInputPassword1">User Name</label>
+							 			<label for="exampleInputPassword1">User Name:</label>
 							 				 <input type="text" id="username" name="username" class="form-control" value="<?php  echo $row['UserName'];?>" readonly="true">
 						  </div>
 							 <div class="form-group"> 
-							 			<label for="exampleInputPassword1">Contact Number</label>
-							 				 <input type="text" id="contactnumber" name="contactnumber" class="form-control" value="<?php  echo $row['MobileNumber'];?>"  pattern="[0-9]{11}" maxlength="11" title="mobile number must 09510722565"> 
+							 			<label for="exampleInputPassword1">Contact Number:</label>
+							 				 <input type="text" id="contactnumber" name="contactnumber" class="form-control" value="<?php  echo $row['MobileNumber'];?>"readonly="true"> 
 							 	</div>
 							 <div class="form-group"> 
-							 			<label for="exampleInputPassword1">Email address</label>
-							 				 <input type="text" id="email" name="email" class="form-control" value="<?php  echo $row['Email'];?>">
+							 			<label for="exampleInputPassword1">Email Address:</label>
+							 				 <input type="text" id="email" name="email" class="form-control" value="<?php  echo $row['Email'];?>" readonly="true">
 							 	 </div>  
 							  <button type="submit" name="submit" class="btn btn-default">Update</button> </form> 
 						</div>

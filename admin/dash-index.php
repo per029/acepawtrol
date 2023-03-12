@@ -9,7 +9,7 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Acepatrol | Admin Dashboard</title>
+<title>Ace Pawtrol | Admin Dashboard</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -136,8 +136,6 @@ $totalser=mysqli_num_rows($query5);
 					</div>
 					<div class="col-md-4 widget states-last">
 						<?php
-
-
 
 		<!--footer-->
 		<?php include_once('includes/footer.php');?>

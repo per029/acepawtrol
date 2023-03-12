@@ -26,7 +26,7 @@ if(isset($_POST['submit']))
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol || View Appointment</title>
+<title>Ace Pawtrol || View Appointment</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -103,15 +103,14 @@ while ($row=mysqli_fetch_array($ret)) {
   </tr>
  
 <tr>
-    <th>Appointment from:</th>
-    <td><?php  echo $row['AptTime'];?></td>
-  </tr>
-
-  <tr>
-    <th>Appointment to:</th>
-    <td><?php  echo $row['appt_to'];?></td>
+    <th>Appointment Start Time</th>
+    <td><?php  echo date('h:i a',strtotime($row['AptTime']));?></td>
   </tr>
   
+  <tr>
+    <th>Appointment End Time</th>
+    <td><?php  echo date('h:i a',strtotime($row['appt_to']));?></td>
+  </tr>
   
   <tr>
     <th>Apply Date</th>
@@ -136,10 +135,6 @@ if($row['Status']=="Rejected")
 {
   echo "Rejected";
 }
-if($row['Status']=="waiting for payment")
-{
-  echo "waiting for payment";
-}
 
      ;?></td>
   </tr>
@@ -153,7 +148,7 @@ if($row['Status']=="waiting for payment")
 <tr>
     <th>Remark :</th>
     <td>
-    <textarea name="remark" placeholder="" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
+    <textarea name="remark" placeholder="" rows="12" cols="14" class="form-control wd-450"></textarea></td>
    </tr>
 
   <tr>
@@ -162,7 +157,6 @@ if($row['Status']=="waiting for payment")
    <select name="status" class="form-control wd-450" required="true" >
      <option value="Selected" selected="true">Selected</option>
      <option value="Rejected">Rejected</option>
-     <option value="waiting for payment">waiting for payment</option>
    </select></td>
   </tr>
 

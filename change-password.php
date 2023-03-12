@@ -39,7 +39,26 @@ echo '<script>alert("Your current password is wrong.")</script>';
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+
+
+<style>
+  i{
+    color:lightgray;
+                position: relative;
+                bottom: 30px;
+                cursor:pointer;
+                left: 600px;
+    }
+</style>
+
+
+
+
+
+
+</head>
   <body id="home">
 <?php include_once('includes/header.php');?>
 
@@ -144,23 +163,90 @@ while ($row=mysqli_fetch_array($ret)) {
                     </div>
                <?php } ?> </div>
                 <div class="map-content-9 mt-lg-0 mt-4">
+
                     <h3>Password change!!</h3>
                     <form method="post" name="changepassword" onsubmit="return checkpass();">
 
-                        <div style="padding-top: 30px;">
+                        <div>
                             <label>Current Password</label>
                             
-                            <input type="password" class="form-control" placeholder="Current Password" id="currentpassword" name="currentpassword" value="" required="true"></div>
-                           <div style="padding-top: 30px;">
+                            <input type="password" class="form-control" placeholder="Current Password" id="currentpassword" name="currentpassword" value="" required="true">
+                        
+                            <i id="visibilityBtn"><span id="icon" class="material-symbols-outlined">visibility_off</i>
+                        </div>
+                           <div >
                             <label>New Password</label>
                             
                             <input type="password" class="form-control" placeholder="New Password" id="newpassword" name="newpassword" value="" required="true">
+                            <i id="visibilityBtn2"><span id="icon2" class="material-symbols-outlined">visibility_off</i>
                         </div>
-                        <div style="padding-top: 30px;">
+                        <div>
                             <label>Confirm Password</label>
                            <input type="password" class="form-control" placeholder="Confirm Password" id="confirmpassword" name="confirmpassword" value=""  required="true">
-                        <button type="submit" class="btn btn-contact" name="change">Save Change</button>
-                    </form>
+                           <i id="visibilityBtn3"><span id="icon3" class="material-symbols-outlined">visibility_off</i>
+                       
+                            <button type="submit" class="btn btn-contact" name="change">Save Change</button>
+                         <script>
+                           const visibilityBtn= document.getElementById("visibilityBtn")
+                    visibilityBtn.addEventListener("click",toggleVisibility)
+
+                   function toggleVisibility(){
+                    const passwordInput= document.getElementById("currentpassword")
+                    const icon = document.getElementById("icon")
+                        if (passwordInput.type === "password"){
+                            passwordInput.type = "text"
+                            icon.innerText = "visibility"
+                        
+                        } else{
+                            passwordInput.type = "password"
+                            icon.innerText = "visibility_off"
+                        }
+
+
+                   } 
+
+                   const visibilityBtn2= document.getElementById("visibilityBtn2")
+                    visibilityBtn2.addEventListener("click",toggleVisibility2)
+
+                   function toggleVisibility2(){
+                    const passwordInput= document.getElementById("newpassword")
+                    const icon = document.getElementById("icon2")
+                        if (passwordInput.type === "password"){
+                            passwordInput.type = "text"
+                            icon.innerText = "visibility"
+                        
+                        } else{
+                            passwordInput.type = "password"
+                            icon.innerText = "visibility_off"
+                        }
+
+
+                   } 
+
+                   const visibilityBtn3= document.getElementById("visibilityBtn3")
+                    visibilityBtn3.addEventListener("click",toggleVisibility3)
+
+                   function toggleVisibility3(){
+                    const passwordInput= document.getElementById("confirmpassword")
+                    const icon = document.getElementById("icon3")
+                        if (passwordInput.type === "password"){
+                            passwordInput.type = "text"
+                            icon.innerText = "visibility"
+                        
+                        } else{
+                            passwordInput.type = "password"
+                            icon.innerText = "visibility_off"
+                        }
+
+
+                   } 
+                    </script>
+                
+                
+                
+                
+                
+                </form>
                 </div>
     </div>
    

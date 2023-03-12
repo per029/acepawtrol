@@ -14,7 +14,7 @@ if (strlen($_SESSION['bpmsuid']==0)) {
   <head>
  
 
-    <title>Ace Petshop | Bookings History</title>
+    <title>Ace Petshop | Booking History</title>
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
@@ -49,7 +49,7 @@ $(function () {
                 
  Booking History
             </h3>
-            <p class="tiltle-para ">Ace petshop is always serves the best for your fur babies.</p>
+            <p class="tiltle-para ">Ace Petshop is always serves the best for your fur babies.</p>
         </div>
 </div>
 </div>
@@ -131,10 +131,6 @@ if($row['Status']=="Selected")
 if($row['Status']=="Rejected")
 {
   echo "Rejected";
-}
-if($row['Status']=="waiting for payment")
-{
-  echo "waiting for payment";
 }
 
      ;?></td>

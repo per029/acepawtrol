@@ -100,7 +100,23 @@ error_reporting(0);
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  </head>
+     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+
+
+            <style>
+              i{
+                color:lightgray;
+                position: relative;
+                bottom: 30px;
+                cursor:pointer;
+                left: 600px;;
+
+                }
+                }
+        </style>
+
+</head>
   <body id="home">
 <?php include_once('includes/header.php');?>
 

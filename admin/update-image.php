@@ -45,7 +45,7 @@ move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$newimage);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Update Services</title>
+<title>Ace Pawtrol | Update Services</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -87,10 +87,10 @@ move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$newimage);
 		<div id="page-wrapper">
 			<div class="main-page">
 				<div class="forms">
-					<h3 class="title1">Update Services</h3>
+					<h3 class="title1">Update Service Image</h3>
 					<div class="form-grids row widget-shadow" data-example-id="basic-forms"> 
 						<div class="form-title">
-							<h4>Update Parlour Services:</h4>
+							<h4>Update Pet Appointment Services:</h4>
 						</div>
 						<div class="form-body">
 							<form method="post" enctype="multipart/form-data">
@@ -106,15 +106,17 @@ while ($row=mysqli_fetch_array($ret)) {
   
 							 <div class="form-group"> <label for="exampleInputEmail1">Service Name</label> <input type="text" class="form-control" id="sername" name="sername" placeholder="Service Name" value="<?php  echo $row['ServiceName'];?>" readonly="true"> </div>
 							 
-							 <div class="form-group"> <label for="exampleInputPassword1">Old Image</label>  <img src="images/<?php echo $row['Image']?>" width="200">
+							 <div class="form-group"> <label for="exampleInputPassword1">Old Image</label>  <img src="images/<?php echo $row['Image']?>" width="120">
                </div>
                <div class="form-group"> <label for="exampleInputEmail1">New Images</label> <input type="file" class="form-control" id="image" name="image" value="" required="true"> </div>
 							 <?php } ?>
 							  <button type="submit" name="submit" class="btn btn-default">Update</button> </form> 
 						</div>
-						
-					</div>
+						<div class="form-group"> <label for="exampleInputEmail1"><a href="manage-services.php">Back to Manage Services</a></label></div>
+						</div>
 				
+					</div>
+					
 				
 			</div>
 		</div>

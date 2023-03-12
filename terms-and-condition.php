@@ -58,127 +58,46 @@ $(function () {
 <h2><strong>Terms and Conditions</strong></h2>
 
 
-<p>Welcome to acepatrol!</p>
+<p>Welcome to Ace Petshop Terms and Conditions !</p>
 
-<p>These terms and conditions outline the rules and regulations for the use of Ace petshop's Website, located at http://localhost/acepetshop/terms-and-condition.php.</p>
+<p>These are the terms and conditions of your Account Please read this document carefully. Please retain this document for future reference, and note that this document is subject to change upon notice to you via posting on the website.</p>
 
-<p>By accessing this website we assume you accept these terms and conditions. Do not continue to use acepatrol if you do not agree to take all of the terms and conditions stated on this page.</p>
+<p>By accessing this website we assume you accept these terms and conditions. Do not continue to use acepawtrol if you do not agree to take all of the terms and conditions stated on this page.</p>
 
 <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
 
-<h3><strong>Cookies</strong></h3>
+<h3><strong>GENERAL PROVISIONS</strong></h3>
 
-<p>We employ the use of cookies. By accessing acepatrol, you agreed to use cookies in agreement with the Ace petshop's Privacy Policy. </p>
+<p>In consideration of our website opening and maintaining this Account, you agree to the terms and conditions contained in this Agreement, as amended from time to time.</p>
 
-<p>Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.</p>
+<h3><strong>NOTE: </strong></h3>
+<p>There are several aspects of this agreement and the Ace Petshop service which are not typical for online services or other scheduling accounts and which you should read carefully before opening an account, including but not limited to:</p>
 
-<h3><strong>License</strong></h3>
+<br>
+<h3><strong>1. OPENING YOUR ACCOUNT. YOU MAY APPLY FOR AN ACCOUNT BY COMPLETING A SIGNUP FORM ON THE WEBSITE.</strong></h3>
+<p>You warrant and represent that the information that you furnish in your Account setup is accurate and truthful. Accounts set up with invalid data will be deleted immediately. You also expressly authorize our website to obtain reports concerning your credit standing and business conduct. Upon your written request, we will inform you whether we have obtained credit reports.</p>
 
-<p>Unless otherwise stated, Ace petshop and/or its licensors own the intellectual property rights for all material on acepatrol. All intellectual property rights are reserved. You may access this from acepatrol for your own personal use subjected to restrictions set in these terms and conditions.</p>
+<h3><strong>2. COSTS AND FEES.</strong></h3>
+<p>We display our service offer and prices. We offer online payment through E-wallet (GCASH). After you make an appointment you can advance your payment through our Gcash QR code. Or After the service of your pet, you may pay through over-the-counter or Gcash. When you make an appointment we need to pay you 50% or more of our services that you choose to guarantee that you appoint to our shop. If you make it on time the rest of the cost of our services you may pay. But if you didn’t arrive on your time schedule the advance payment you give is nonrefundable for the cost and delay you give,</p>
 
-<p>You must not:</p>
+<br><h3><strong>3. CUSTOMER’S RESPONSIBILITY</strong></h3>
+
+<p>Regarding making an appointment. If you didn’t make it in time you will be automatically canceled and you make another schedule. You are responsible for knowing the appointments that have been scheduled.</p>
+
+<br><h3><strong>4. SCHEDULING WALK-IN/ ONLINE</strong></h3>
+<p>We are always first come first serve. If you make an appointment you will automatically reserve. If a walk-in customer is the first to come the admin will reserve an available time. Online Appointee, will choose the available date and time displayed.</p>
+
+<br><h3><strong>5. COMPANY POLICIES</strong></h3>
+<p>We have policies to guarantee that your pet is safe and secure.</p>
+<br>
 <ul>
-    <li>Republish material from acepatrol</li>
-    <li>Sell, rent or sub-license material from acepatrol</li>
-    <li>Reproduce, duplicate or copy material from acepatrol</li>
-    <li>Redistribute content from acepatrol</li>
+    <li>1.	First Come First Serve</li>
+    <li>2.	Down Payment First before making an appointment</li>
+    <li>3.	We provide and give our best services to your pet</li>
+    <li>4.	You can leave your pet in our cage</li>
 </ul>
 
-<p>This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the help of the <a href="https://www.termsandconditionsgenerator.com/">Free Terms and Conditions Generator</a>.</p>
-
-<p>Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. Ace petshop does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of Ace petshop,its agents and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, Ace petshop shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.</p>
-
-<p>Ace petshop reserves the right to monitor all Comments and to remove any Comments which can be considered inappropriate, offensive or causes breach of these Terms and Conditions.</p>
-
-<p>You warrant and represent that:</p>
-
-<ul>
-    <li>You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;</li>
-    <li>The Comments do not invade any intellectual property right, including without limitation copyright, patent or trademark of any third party;</li>
-    <li>The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material which is an invasion of privacy</li>
-    <li>The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity.</li>
-</ul>
-
-<p>You hereby grant Ace petshop a non-exclusive license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.</p>
-
-<h3><strong>Hyperlinking to our Content</strong></h3>
-
-<p>The following organizations may link to our Website without prior written approval:</p>
-
-<ul>
-    <li>Government agencies;</li>
-    <li>Search engines;</li>
-    <li>News organizations;</li>
-    <li>Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites of other listed businesses; and</li>
-    <li>System wide Accredited Businesses except soliciting non-profit organizations, charity shopping malls, and charity fundraising groups which may not hyperlink to our Web site.</li>
-</ul>
-
-<p>These organizations may link to our home page, to publications or to other Website information so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products and/or services; and (c) fits within the context of the linking party’s site.</p>
-
-<p>We may consider and approve other link requests from the following types of organizations:</p>
-
-<ul>
-    <li>commonly-known consumer and/or business information sources;</li>
-    <li>dot.com community sites;</li>
-    <li>associations or other groups representing charities;</li>
-    <li>online directory distributors;</li>
-    <li>internet portals;</li>
-    <li>accounting, law and consulting firms; and</li>
-    <li>educational institutions and trade associations.</li>
-</ul>
-
-<p>We will approve link requests from these organizations if we decide that: (a) the link would not make us look unfavorably to ourselves or to our accredited businesses; (b) the organization does not have any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of Ace petshop; and (d) the link is in the context of general resource information.</p>
-
-<p>These organizations may link to our home page so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products or services; and (c) fits within the context of the linking party’s site.</p>
-
-<p>If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website, you must inform us by sending an e-mail to Ace petshop. Please include your name, your organization name, contact information as well as the URL of your site, a list of any URLs from which you intend to link to our Website, and a list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.</p>
-
-<p>Approved organizations may hyperlink to our Website as follows:</p>
-
-<ul>
-    <li>By use of our corporate name; or</li>
-    <li>By use of the uniform resource locator being linked to; or</li>
-    <li>By use of any other description of our Website being linked to that makes sense within the context and format of content on the linking party’s site.</li>
-</ul>
-
-<p>No use of Ace petshop's logo or other artwork will be allowed for linking absent a trademark license agreement.</p>
-
-<h3><strong>iFrames</strong></h3>
-
-<p>Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website.</p>
-
-<h3><strong>Content Liability</strong></h3>
-
-<p>We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.</p>
-
-<h3><strong>Your Privacy</strong></h3>
-
-<p>Please read Privacy Policy</p>
-
-<h3><strong>Reservation of Rights</strong></h3>
-
-<p>We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.</p>
-
-<h3><strong>Removal of links from our website</strong></h3>
-
-<p>If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.</p>
-
-<p>We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.</p>
-
-<h3><strong>Disclaimer</strong></h3>
-
-<p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website. Nothing in this disclaimer will:</p>
-
-<ul>
-    <li>limit or exclude our or your liability for death or personal injury;</li>
-    <li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
-    <li>limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
-    <li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
-</ul>
-
-<p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</p>
-
-<p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
+   
                     </body>
 </section>
 

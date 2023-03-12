@@ -5,11 +5,10 @@ include('includes/dbconnection.php');
 $valid['success'] = array('success' => false, 'messages' => array());
 
 if($_POST){
-	$brandsName = $_POST['brandsName'];
-	$brandActive = $_POST['brandActive'];
-	$expDate = $_POST['expDate'];
+	$brandName = $_POST['brandName'];
+	$brandStatus = $_POST['brandStatus'];
 
-	$sql = "INSERT INTO tblbrand (brand_name, brand_active,brand_datetime_added, expiry_date, brand_status) values ('$brandsName','$brandActive', '$NOW()', '$expDate', 1)";
+	$sql = "INSERT INTO brands (brand_name, brand_active, brand_status) VALUES ('$brandName', '$brandStatus', 1)";
 
 	if ($con->query($sql) === TRUE){
 		$valid['success'] = true;
@@ -24,6 +23,3 @@ if($_POST){
 	echo json_encode($valid);
 	  
 }
-
-
-

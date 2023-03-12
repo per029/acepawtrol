@@ -9,19 +9,19 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 if(isset($_POST['submit']))
   {
     $proname=$_POST['proname'];
-    $quantity=$_POST['quantity'];
-    $price=$_POST['price'];
-    $act=$_POST['act'];
-    $expDate=$_POST['expDate'];
-
-  
+    $brandActive=$_POST['brandActive'];
+    $categoryActive=$_POST['categoryActive'];
+    $quanti=$_POST['quanti'];
+    $rates=$_POST['rates'];
+   	$prostat=$_POST['prostat'];
+    
    
  $eid=$_GET['editid'];
      
-    $query=mysqli_query($con, "update  tblproduct set product_name='$proname',quantity='$quantity',price='$price',active='$act',expiry_date='$expDate' where product_id='$eid' ");
+    $query=mysqli_query($con, "update  tblproduct set product_name='$proname',brand_id='$brandActive',category_id='$categoryActive',quantity='$quanti',rate='$rates',active='$prostat' where product_id='$eid' ");
     if ($query) {
   
-    echo "<script>alert('Product has been Updated.');</script>";
+    echo "<script>alert('Service has been Updated.');</script>";
   }
   else
     {
@@ -35,7 +35,7 @@ if(isset($_POST['submit']))
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol | Update Product</title>
+<title>Ace Pawtrol | Update Services</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -77,51 +77,96 @@ if(isset($_POST['submit']))
 		<div id="page-wrapper">
 			<div class="main-page">
 				<div class="forms">
-					<h3 class="title1">Update Product</h3>
+					<h3 class="title1">Update Services</h3>
 					<div class="form-grids row widget-shadow" data-example-id="basic-forms"> 
 						<div class="form-title">
-							<h4>Update Product:</h4>
+							<h4>Update Parlour Services:</h4>
 						</div>
 						<div class="form-body">
 							<form method="post">
 								
   <?php
  $cid=$_GET['editid'];
-$ret=mysqli_query($con,"select * from  tblproduct where product_id='$cid'");
+$ret=mysqli_query($con,"SELECT tblproduct.product_id, tblproduct.product_name, tblproduct.product_image, tblproduct.brand_id, tblproduct.category_id, tblproduct.quantity, tblproduct.rate, tblproduct.active, tblproduct.status, tblbrand.brand_name, tblcategory.category_name FROM tblproduct
+	INNER JOIN tblbrand ON tblproduct.brand_id = tblbrand.brand_id
+	INNER JOIN tblcategory ON tblproduct.category_id = tblcategory.category_id
+	WHERE tblproduct.product_id = '$cid' "); //dito ko icocode inner join
 $cnt=1;
-while ($row=mysqli_fetch_array($ret)) {
+while ($row2=mysqli_fetch_array($ret)) {
 
 ?> 
 
+
   
-							 <div class="form-group">
-							 <label for="exampleInputEmail1">Category Name</label> 
-							 <input type="text" class="form-control" id="proname" name="proname" placeholder="Product Name" value="<?php  echo $row['product_name'];?>" required="true"> </div>
+							 <div class="form-group"> <label for="exampleInputEmail1">Product Name</label> <input type="text" class="form-control" id="proname" name="proname" placeholder="Product Name" value="<?php  echo $row2['product_name'];?>" required="true"> </div>
+
+
+
+							 <div class="form-group"> <label for="exampleInputPassword1">Image</label> <br><br> <img src="images/<?php echo $row2['product_image']?>" width="200">
+               <a href="update-product-image.php?lid=<?php echo $row2['product_id'];?>">Update Image</a> </div>
+
+
 
 							 
-								 <div class="form-group"> <label for="exampleInputPassword1">Image</label> <br><br> <img src="images/<?php echo $row['product_image']?>" width="200">
-	               <a href="update-product-image.php?lid=<?php echo $row['product_id'];?>">Update Image</a> </div>
 
-	            
-							    	 
+							 
+							 <div class="form-group">
+                 <label>Brands</label>
+                 <select class="form-control" id="brandActive" name="brandActive" value="" required="true">
+                 <option value=""><?php echo $row2['brand_name'];?></option>
+							      	<?php 
+							      	$sql = "SELECT brand_id, brand_name FROM tblbrand WHERE brand_active = 1";
+							      	$result = $con->query($sql);
+							      	while ($row = $result->fetch_array()) {
+							      		echo "<option value='".$row[0]."'>".$row[1]."</option>";
+							      	}
+							      	?>
+							      </select>
+							    </div>
 
-							 	<div class="form-group">
-							 <label for="exampleInputEmail1">Quantity</label> 
-							 <input type="" class="form-control" id="quantity" name="quantity" value="<?php  echo $row['quantity'];?>" required="true"> </div>
-
-
-							 	<div class="form-group">
-							 <label for="exampleInputEmail1">Price</label> 
-							 <input type="" class="form-control" id="price" name="price" value="<?php  echo $row['price'];?>" required="true"> </div>
 
 
 
+							  <div class="form-group">
+                 <label>Category</label>
+                 <select class="form-control" id="categoryActive" name="categoryActive" value="" required="true">
+                 <option value=""><?php echo $row2['category_name'];?></option>
+							      	<?php 
+							      	$sql = "SELECT category_id, category_name FROM tblcategory WHERE category_active = 1";
+							      	$result = $con->query($sql);
+							      	while ($row = $result->fetch_array()) {
+							      		echo "<option value='".$row[0]."'>".$row[1]."</option>";
+							      	}
+							      	?>
+							      </select>
+							    </div>
+
+
+
+
+
+							  <div class="form-group"> <label for="exampleInputEmail1">Quantity</label> <input type="text" class="form-control" id="quanti" name="quanti" placeholder="Quantity" value="<?php  echo $row2['quantity'];?>" required="true"> </div>
+
+							 
+
+							 <div class="form-group"> <label for="exampleInputEmail1">Rate</label> <input type="text" class="form-control" id="rates" name="rates" placeholder="Rate" value="<?php  echo $row2['rate'];?>" required="true"> </div>
+
+
+
+
+
+							
+
+
+
+
+															 
 								<div class="form-group"> 
-								<label for="exampleInputEmail1">product Status</label>
+								<label for="exampleInputEmail1">Product Status</label>
 															 	
-								<select class="form-control" id="act" name="act" value="" required="true">
+								<select class="form-control" id="prostat" name="prostat" value="" required="true">
 															  	
-								<option value=""><?php if($row['active']==1){
+								<option value=""><?php if($row2['active']==1){
 									echo "available";
 								} else{
 									echo "not available";
@@ -129,21 +174,22 @@ while ($row=mysqli_fetch_array($ret)) {
 								<option value="1">Available</option>
 								<option value="2">Not Available</option>
 								</select>
+
 								</div>
-
-							
-
-							 <div class="form-group">
-							 <label for="exampleInputEmail1">Expiration Date</label> 
-							 <input type="date" class="form-control" id="expDate" name="expDate" value="<?php  echo $row['expiry_date'];?>" required="true"> </div>
 							 
-							 
+
+
+
 						
+
+
 							 <?php } ?>
+
+
 							  <button type="submit" name="submit" class="btn btn-default">Update</button> </form>
 
 							  <br>
-							  <div class="form-group"> <label for="exampleInputEmail1"><a href="manage-product.php">Back to Manage Product</a></label></div>
+							  <div class="form-group"> <label for="exampleInputEmail1"><a href="manage-product.php">Back to Manage product</a></label></div>
 						</div>
 						
 					</div>

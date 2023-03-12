@@ -98,7 +98,7 @@ while ($row=mysqli_fetch_array($ret)) {
                         </div>
                         <div class="cont-right">
                             <h6>Call Us</h6>
-                            <p class="para"><a href="tel:+44 99 555 42">+<?php  echo $row['MobileNumber'];?></a></p>
+                            <p class="para"><a href="">+<?php  echo $row['MobileNumber'];?></a></p>
                         </div>
                     </div>
                     <div class="cont-top margin-up">
@@ -121,7 +121,7 @@ while ($row=mysqli_fetch_array($ret)) {
                     </div>
                     <div class="cont-top margin-up">
                         <div class="cont-left text-center">
-                            <span class="fa fa-map-marker text-primary"></span>
+                            <span class="fa fa-clock-o text-primary"></span>
                         </div>
                         <div class="cont-right">
                             <h6>Time</h6>
@@ -136,7 +136,7 @@ while ($row=mysqli_fetch_array($ret)) {
                             <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" required="">
                         </div>
                         <div class="twice-two">
-                           <input type="text" class="form-control" placeholder="Phone" required="" name="phone" pattern="[0-9]+" maxlength="10">
+                           <input type="text" class="form-control" placeholder="Phone" required="" name="phone" pattern="[0-9]{11}" maxlength="11" title="mobile number must 09510722565"> 
                             <input type="email" class="form-control" class="form-control" placeholder="Email" required="" name="email">
                         </div>
                         

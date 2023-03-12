@@ -2,31 +2,17 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-    if (strlen($_SESSION['bpmsaid']==0)) {
+if (strlen($_SESSION['bpmsaid']==0)) {
   header('location:logout.php');
   } else{
-if(isset($_POST['submit']))
-  {
-    
-    $eid=$_GET['editid'];
-     
-      $Status=$_POST['Status'];
-   $query=mysqli_query($con, "update  tblbook set Status='$Status' where ID='$eid'");
-    if ($query) {
-    
-    echo '<script>alert("All remark has been updated.")</script>';
-    echo "<script type='text/javascript'> document.location ='all-appointment.php'; </script>";
-  }
-  else
-    {
-      echo '<script>alert("Something Went Wrong. Please try again")</script>';
-    }
-}
+
+
+
   ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>AcePatrol || Edit Appointment</title>
+<title>Ace Pawtrol || Update Appointment</title>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
@@ -68,14 +54,18 @@ if(isset($_POST['submit']))
 		<div id="page-wrapper">
 			<div class="main-page">
 				<div class="tables">
-					<h3 class="title1">Edit Appointment</h3>
+					<h3 class="title1">All Appointment</h3>
+					
+					
+				
 					<div class="table-responsive bs-example widget-shadow">
-						
-						<h4>Edit Appointment:</h4>
-						<form method="post">
+						<p style="font-size:16px; color:red" align="center"> <?php if($msg){
+    echo $msg;
+  }  ?> </p>
+						<h4>All Appointment:</h4>
 						<?php
 $cid=$_GET['editid'];
-$ret=mysqli_query($con,"select tbluser.FirstName,tbluser.LastName,tbluser.Email,tbluser.MobileNumber,tblbook.ID as bid,tblbook.AptNumber,tblbook.AptDate,tblbook.AptTime,tblbook.appt_to,tblbook.Message,tblbook.BookingDate,tblbook.Remark,tblbook.Status,tblbook.RemarkDate from tblbook join tbluser on tbluser.ID=tblbook.UserID where tblbook.ID='$cid'");
+$ret=mysqli_query($con,"select * from tblappointment where ID='$cid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
@@ -87,7 +77,7 @@ while ($row=mysqli_fetch_array($ret)) {
   </tr>
   <tr>
 <th>Name</th>
-    <td><?php  echo $row['FirstName'];?> <?php  echo $row['LastName'];?></td>
+    <td><?php  echo $row['Name'];?></td>
   </tr>
 
 <tr>
@@ -96,7 +86,7 @@ while ($row=mysqli_fetch_array($ret)) {
   </tr>
    <tr>
     <th>Mobile Number</th>
-    <td><?php  echo $row['MobileNumber'];?></td>
+    <td><?php  echo $row['PhoneNumber'];?></td>
   </tr>
    <tr>
     <th>Appointment Date</th>
@@ -104,45 +94,83 @@ while ($row=mysqli_fetch_array($ret)) {
   </tr>
  
 <tr>
-    <th>Appointment from:</th>
+    <th>Appointment Time</th>
     <td><?php  echo $row['AptTime'];?></td>
   </tr>
-
+  
   <tr>
-    <th>Appointment to:</th>
-    <td><?php  echo $row['appt_to'];?></td>
+    <th>Services</th>
+    <td><?php  echo $row['Services'];?></td>
   </tr>
-  
-  
   <tr>
     <th>Apply Date</th>
-    <td><?php  echo $row['BookingDate'];?></td>
+    <td><?php  echo $row['ApplyDate'];?></td>
   </tr>
   
 
 <tr>
     <th>Status</th>
-    <td> <select class="" id="Status" name="Status" value="" required="true">
-    	<option value=""><?php echo $row['Status'];?>
-									</option><option value="Selected">Selected</option>
-								<option value="Rejected">Rejected</option></td></select>
+    <td> <?php  
+if($row['Status']=="1")
+{
+  echo "Selected";
+}
+
+if($row['Status']=="2")
+{
+  echo "Rejected";
+}
+
+     ;?></td>
+  </tr>
+						</table>
+						<table class="table table-bordered">
+							<?php if($row['Remark']==""){ ?>
+
+
+<form name="submit" method="post" enctype="multipart/form-data"> 
+
+<tr>
+    <th>Remark :</th>
+    <td>
+    <textarea name="remark" placeholder="" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
+   </tr>
+
+  <tr>
+    <th>Status :</th>
+    <td>
+   <select name="status" class="form-control wd-450" required="true" >
+     <option value="1" selected="true">Selected</option>
+     <option value="2">Rejected</option>
+   </select></td>
   </tr>
 
-						</table><?php } ?>
-						<div><button type="submit" name="submit" method="post" enctype="multipart/form-data" class="btn btn-primary">update </button>
-							   <a class="link--gray" style="color: blue;" href="message.php">Message</a>
-						</form> </div>
-						
+  <tr align="center">
+    <td colspan="2"><button type="submit" name="submit" class="btn btn-az-primary pd-x-20">Submit</button></td>
+  </tr>
+  </form>
+<?php } else { ?>
+						</table>
 						<table class="table table-bordered">
-							<?php if($row['Status']==""){ ?>
+							<tr>
+    <th>Remark</th>
+    <td><?php echo $row['Remark']; ?></td>
+  </tr>
 
 
+<tr>
+<th>Remark date</th>
+<td><?php echo $row['Remarkdate']; ?>  </td></tr>
 
-
-
-<?php } ?>
+						</table>
+						<?php } ?>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!--footer-->
-		
+		 <?php include_once('includes/footer.php');?>
         <!--//footer-->
 	</div>
 	<!-- Classie -->

@@ -1,4 +1,6 @@
+
 <?php 
+date_default_timezone_set('Asia/Manila');
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
@@ -6,34 +8,35 @@ if (strlen($_SESSION['bpmsuid']==0)) {
   header('location:logout.php');
   } else{
 
-if(isset($_POST['submit'])) {
-  $uid=$_SESSION['bpmsuid'];
-  $adate=$_POST['adate'];
-  $appointment_time=$_POST['time'];
-  $msg=$_POST['message'];
-  $aptnumber = mt_rand(100000000, 999999999);
-  list($atime, $end_time) = explode(' - ', $appointment_time);
-  
-  // Check if selected time is already reserved
-  $existing = mysqli_query($con, "SELECT * FROM tblbook WHERE AptDate='$adate' AND AptTime='$atime'");
-  if(mysqli_num_rows($existing) > 0) {
-    echo '<script>alert("The selected date and time is already reserved. Please choose another date and time.")</script>';
-    echo "<script>window.location.href='book-appointment.php'</script>";
-  }
-  
-  // Insert new appointment
-  $query=mysqli_query($con,"INSERT INTO tblbook(UserID,AptNumber,AptDate,AptTime,Message,appt_to) VALUE('$uid','$aptnumber','$adate','$atime','$msg','$end_time')");
+if(isset($_POST['submit']))
+  {
+    $uid=$_SESSION['bpmsuid'];
+    $adate=$_POST['adate'];
+    $appointment_time=$_POST['time'];
+    $aptnumber = mt_rand(100000000, 999999999);
+    $msg=$_POST['message'];
+    $atime = $_POST['appoint_time'].':00:00';
+    $end_time = $_POST['appoint_time'] + 1 . ':00:00';
+    
+    // echo $atime. " ". $end_time;
+    // echo "<script>alert('$end_time');</script>";
 
-  if ($query) {
-    $ret=mysqli_query($con,"SELECT AptNumber FROM tblbook WHERE tblbook.UserID='$uid' ORDER BY ID DESC LIMIT 1;");
-    $result=mysqli_fetch_array($ret);
-    $_SESSION['aptno']=$result['AptNumber'];
-    echo "<script>window.location.href='thank-you.php'</script>";  
-  } else {
-    echo '<script>alert("Something went wrong. Please try again.")</script>';
+    $query=mysqli_query($con,"insert into tblbook(UserID,AptNumber,AptDate,AptTime,Message,appt_to
+    ) value('$uid','$aptnumber','$adate','$atime','$msg','$end_time')");
+
+    if ($query) {
+$ret=mysqli_query($con,"select AptNumber from tblbook where tblbook.UserID='$uid' order by ID desc limit 1;");
+$result=mysqli_fetch_array($ret);
+$_SESSION['aptno']=$result['AptNumber'];
+ echo "<script>window.location.href='thank-you.php'</script>";  
   }
+  else
+    {
+      echo '<script>alert("Something Went Wrong. Please try again")</script>';
+    }
+
+  
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,7 +59,10 @@ if(isset($_POST['submit'])) {
   <body id="home">
 <?php include_once('includes/header.php');?>
 
-<script src="assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+<!-- Common jquery plugin -->
+<!-- <script src="assets/js/jquery-3.3.1.min.js"></script>  -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <!--bootstrap working-->
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- //bootstrap working-->
@@ -93,7 +99,7 @@ $(function () {
 </section>
 <!-- breadcrumbs //-->
 <section class="w3l-contact-info-main" id="contact">
-    <div class="contact-sec ">
+    <div class="contact-sec	">
         <div class="container">
 
             <div class="d-grid contact-view">
@@ -134,7 +140,7 @@ while ($row=mysqli_fetch_array($ret)) {
                     </div>
                     <div class="cont-top margin-up">
                         <div class="cont-left text-center">
-                            <span class="fa fa-map-marker text-primary"></span>
+                            <span class="fa fa-clock-o text-primary"></span>
                         </div>
                         <div class="cont-right">
                             <h6>Time</h6>
@@ -146,73 +152,27 @@ while ($row=mysqli_fetch_array($ret)) {
                     <form method="post">
 
 
-                    <div style="padding-top: 30px;">
-                          <br>  <label>Select Services</label> <br>
-            <style>
-  select {
-    width: 250px;
-    font-size: 18px;
-    padding: 10px;
-  }
-</style>
+                    
 
-  <select id="main-category"  >
-  <option value="">Select Type of Services:</option>
-  <option value="Category A">Haircut Only</option>
-  <option value="Category B">Full Groom</option>
-  <option value="Category C">Alacarte</option>
-</select>
+                      <div style="padding-top: 30px;">
 
-<select id="sub-category" >
-  <option value="disabled">Please Select Category</option>
-</select>
+                            <label>Select Services</label>
+                            
+                            <select id="main-category">
+                                <option value="">Select Type of Services:</option>
+                                <option value="Category A">Haircut Only</option>
+                                <option value="Category B">Full Groom</option>
+                                <option value="Category C">Alacarte</option>
+                          </select>
 
-<script>
-    
-  const mainCategory = document.querySelector("#main-category");
-  const subCategory = document.querySelector("#sub-category");
+                        </div>
+                           
 
-  mainCategory.addEventListener("change", function() {
-    switch (mainCategory.value) {
-      case "Category A":
-        subCategory.innerHTML = `
-          <option value=""disabled>Select Haircut Dog Size</option>
-          <option value="SMALL ₱ 199.00">SMALL ₱ 199.00</option>
-          <option value="MEDIUM ₱ 249.00">MEDIUM ₱ 249.00</option>
-          <option value="LARGE ₱ 300.00">LARGE ₱ 300.00</option>
-          <option value=" EXTRA LARGE ₱ 350.00"> EXTRA LARGE ₱ 350.00</option>
-        `;
-        break;
-      case "Category B":
-        subCategory.innerHTML = `
-          <option value=""disabled>Select Full Groom Dog Size</option>
-          <option value="SMALL ₱ 300.00">SMALL ₱ 300.00</option>
-          <option value="MEDIUM ₱ 350.00">MEDIUM ₱ 350.00</option>
-          <option value="LARGE ₱ 450.00">LARGE ₱ 450.00</option>
-          <option value="EXTRA LARGE ₱ 550.00">EXTRA LARGE ₱ 550.00</option>
-          <option value="DOUBLE EXTRA LARGE ₱ 650.00"> DOUBLE EXTRA LARGE ₱ 650.00</option>
-        `;
-        break;
-      case "Category C":
-        subCategory.innerHTML = `
-        <option value="" disabled>Select Alacarte for your Dog </option>
-          <option value="NAIL CLIPPING ₱ 50.00">NAIL CLIPPING ₱ 50.00</option>
-          <option value="PAW TRIM ₱ 75.00">PAW TRIM ₱ 75.00</option>
-          <option value="EAR CLEANING ₱ 50.00">EAR CLEANING ₱ 50.00</option>
-          <option value="FACE TRIM ₱ 100.00">FACE TRIM ₱ 100.00</option>
-          <option value="EAR CLEANING ₱ 50.00">EAR CLEANING ₱ 50.00</option>
-          <option value="EAR PLUCKING ₱ 50.00">EAR PLUCKING ₱ 50.00</option>
-        `;
-        break;
-      default:
-        subCategory.innerHTML = `
-          <option value="">Please Select Category</option>
-        `;
-    }
-  });
-</script>
-            </div>
-            
+                          <div id="sub-category" style="padding-top: 30px;">
+                 
+                  </div>
+
+
 
 
                     
@@ -221,11 +181,6 @@ while ($row=mysqli_fetch_array($ret)) {
                             
                             <input class="form-control appointment_date" placeholder="Select Date" type="date" name="adate" id='adate' required="true"></div>
                            
-
-
-                            
-
-
 
                         <div style="padding-top: 30px;">
                         
@@ -236,33 +191,18 @@ while ($row=mysqli_fetch_array($ret)) {
  -->
  <label for="time">Appointment Time <br/>(Opening Hours 9:00 am - 7:00 pm)</label>
  
- <input id="time" type="text" list="times" class="block border border-grey-light w-full p-3 rounded mb-4" name="time" placeholder="Select Time" required />
-                            <datalist id="times">
-                                <option>9:00 am- 10:00 am</option>
-                                <option>10:00 am- 11:00 am</option>
-                                <option>11:00 am - 12:00 pm</option>
-                                <option>12:00 pm - 1:00 pm</option>
-                                <option>1:00 pm - 2:00 pm</option>
-                                <option>2:00 pm - 3:00 pm</option>
-                                <option>3:00 pm - 4:00 pm</option>
-                                <option>4:00 pm - 5:00 pm</option>
-                                <option>5:00 pm - 6:00 pm</option>
-                                <option>6:00 pm - 7:00 pm</option>
-                            </datalist>
+ <!-- <label id="time" type="text" list="times" class="block border border-grey-light w-full p-3 rounded mb-4" name="time" placeholder="Select Time"> </label></div> -->
+                           <div> <select id="times" disabled name="appoint_time"> </div>
+                              <option value="" hidden>Available Time</option>
+                            </select>
 
-
-
-
-
+                           
                            
 
                         <div style="padding-top: 30px;">
                         <textarea class="form-control" id="message" name="message" placeholder="Message" required=""></textarea></div>
                         <br>
 
-        
-
-                      
                         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
                           
                         
@@ -286,9 +226,7 @@ while ($row=mysqli_fetch_array($ret)) {
                        
 
                         </body> </table> 
-                        <form>
-                                            
-                            
+                        <form>   
                         <button type="submit" class="btn btn-contact" name="submit">Make an Appointment</button>
                     </form>
                 </div>
@@ -300,27 +238,69 @@ while ($row=mysqli_fetch_array($ret)) {
 <?php include_once('includes/footer.php');?>
 <!-- move top -->
 <button onclick="topFunction()" id="movetop" title="Go to top">
-    <span class="fa fa-long-arrow-up"></span>
+	<span class="fa fa-long-arrow-up"></span>
 </button>
 <script>
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-        scrollFunction()
-    };
+  const mainCategory = document.querySelector("#main-category");
+  const subCategory = document.querySelector("#sub-category");
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("movetop").style.display = "block";
-        } else {
-            document.getElementById("movetop").style.display = "none";
-        }
+  mainCategory.addEventListener("change", function() {
+    switch (mainCategory.value) {
+      case "Category A":
+        subCategory.innerHTML = `
+          <h3>Select Haircut Dog Size</h3>
+          <label><input type="radio" name="size[]" value="SMALL" class="custom-checkbox"> SMALL ₱ 199.00</label><br>
+          <label><input type="radio" name="size[]" value="MEDIUM" class="custom-checkbox"> MEDIUM ₱ 249.00</label><br>
+          <label><input type="radio" name="size[]" value="LARGE" class="custom-checkbox"> LARGE ₱ 300.00</label><br>
+          <label><input type="radio" name="size[]" value="EXTRA LARGE"class=" custom-checkbox"> EXTRA LARGE ₱ 350.00</label><br>
+        `;
+        break;
+      case "Category B":
+        subCategory.innerHTML = `
+          <h3>Select Full Groom Dog Size</h3>
+          <label><input type="radio" name="size[]" value="SMALL" class="custom-checkbox"> SMALL ₱ 300.00</label><br>
+          <label><input type="radio" name="size[]" value="MEDIUM" class="custom-checkbox"> MEDIUM ₱ 350.00</label><br>
+          <label><input type="radio" name="size[]" value="LARGE" class="custom-checkbox"> LARGE ₱ 450.00</label><br>
+          <label><input type="radio" name="size[]" value="EXTRA LARGE"class=" custom-checkbox"> EXTRA LARGE ₱ 550.00</label><br>
+          <label><input type="radio" name="size[]" value="DOUBLE EXTRA LARGE" class="custom-checkbox"> DOUBLE EXTRA LARGE ₱ 650.00</label><br>
+        ` 
+        break;
+      case "Category C":
+        subCategory.innerHTML = `
+          <h3>Select Alacarte for your Dog:</h3>
+          <label><input type="checkbox" name="alacarte[]" value="NAIL CLIPPING"> NAIL CLIPPING ₱ 50.00</label><br>
+          <label><input type="checkbox" name="alacarte[]" value="PAW TRIM"> PAW TRIM ₱ 75.00</label><br>
+          <label><input type="checkbox" name="alacarte[]" value="EAR CLEANING"> EAR CLEANING ₱ 50.00</label><br>
+          <label><input type="checkbox" name="alacarte[]" value="FACE TRIM"> FACE TRIM ₱ 100.00</label><br>
+          <label><input type="checkbox" name="alacarte[]" value="EAR PLUCKING"> EAR PLUCKING ₱ 50.00</label><br>
+        `;
+        break;
+      default:
+        subCategory.innerHTML = `
+      
+        `;
     }
+  });
+</script>
+<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function () {
+		scrollFunction()
+	};
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
+	function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			document.getElementById("movetop").style.display = "block";
+		} else {
+			document.getElementById("movetop").style.display = "none";
+		}
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
 $(function(){
     var dtToday = new Date();
     
@@ -335,6 +315,63 @@ $(function(){
     var maxDate = year + '-' + month + '-' + day;
     $('#adate').attr('min', maxDate);
 });</script>
+<script>
+    $( "#adate" ).on('change',function() {
+        var date= $(this).val()
+        if (date != ""){
+
+          // enabled the available time
+          $("#times").attr("disabled",false)
+          
+          // empty select then append available options
+          $("#times").empty();
+          $('#times').append('<option hidden value="">Available Time</option>');
+          
+
+          var static_time = [
+            "09:00 am - 10:00 am",
+            "10:00 am - 11:00 am",
+            "11:00 am - 12:00 pm",
+            "12:00 pm - 01:00 pm",
+            "01:00 pm - 02:00 pm",
+            "02:00 pm - 03:00 pm",
+            "03:00 pm - 04:00 pm",
+            "04:00 pm - 05:00 pm",
+            "05:00 pm - 06:00 pm",
+            "06:00 pm - 07:00 pm",
+          ];
+
+          var reserved_time = [];
+
+          var current_time = "<?php echo date('H'); ?>";
+          var current_date = "<?php echo date('Y-m-d'); ?>";
+          
+          $.ajax({
+            // GET - fetching, 
+            // POST - insert
+            type: 'GET', 
+            url : 'get_reserved_time.php',  // php file path 
+            data: {'date_selected' : date}, /* 2023-03-04 ...  php echo date('Y-m-d') ?>; */
+            success: function(response) {
+              reserved_time = JSON.parse(response);
+              
+              static_val_time = 9;
+              for(i = 0; i < static_time.length; i++) {
+                // check if next append option is not in array reserved_time if true, append.
+
+                if(!reserved_time.includes(static_time[i])) {
+                  $('#times').append('<option value="'+static_val_time+'">'+static_time[i]+'</option>');
+                }
+                static_val_time++;
+              }
+            }
+          });
+        }
+        else{ 
+          $("#times").attr("disabled",true)
+        }
+    });
+  </script>
 <!-- /move top -->
 </body>
 

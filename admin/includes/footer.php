@@ -1,5 +1,5 @@
 <!--footer-->
     <div class="footer">
-       <p>&copy; 2022 Acepatrol Admin Panel.</p>
+       <p>&copy; 2022 Ace Pawtrol Admin Panel.</p>
     </div>
         <!--//footer-->
