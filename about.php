@@ -7,7 +7,7 @@ include('includes/dbconnection.php');
 <html lang="en">
   <head>
     
-    <title>Ace Petshop | About us Page</title>
+    <title>Ace Petshop | About us Pages</title>
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
