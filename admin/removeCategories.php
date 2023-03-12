@@ -1,0 +1,27 @@
+<?php
+
+include('includes/dbconnection.php');
+
+
+$valid['success'] = array('success' => false, 'messages' => array());
+
+$categoriesId = $_POST['categoriesId'];
+
+if($categoriesId) { 
+
+ $sql = "UPDATE category SET categories_status = 2 WHERE categories_id = '$categoriesId'";
+
+ if($con->query($sql) === TRUE) {
+ 	$valid['success'] = true;
+	$valid['messages'] = "Successfully Removed";		
+ } else {
+ 	$valid['success'] = false;
+ 	$valid['messages'] = "Error while remove the categories";
+ }
+ 
+ $con->close();
+
+ echo json_encode($valid);
+ 
+} // /if $_POST
+?>
